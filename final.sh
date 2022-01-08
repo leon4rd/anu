@@ -15,4 +15,5 @@ ccache -z
 
 source build/envsetup.sh
 lunch lineage_onclite-userdebug
+breakfast onclite
 brunch onclite -j$(nproc --all)

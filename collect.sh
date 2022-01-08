@@ -7,9 +7,8 @@ cd /tmp/rom
 #rm out.tar.gz
 #sleep 5s
 source build/envsetup.sh
-export TARGET_USES_MKE2FS=true
 lunch lineage_onclite-userdebug
-export TARGET_USES_MKE2FS=true
+breakfast onclite
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
