@@ -1,5 +1,5 @@
 #!/bin/bash
-sleep 1m
+sleep 10s
 cd /tmp
 
 com ()
@@ -8,3 +8,16 @@ com ()
 }
 
 time com ccache 1
+rclone copy ccache.tar.gz rclonerw:aex -P
+
+cd /tmp/rom
+mka installclean
+sleep 5s
+
+comi ()
+{
+    tar --use-compress-program="pigz -k -$2 " -cf $1.tar.gz $1
+}
+
+time comi out 1
+rclone copy out.tar.gz rclonerw:aex -P
