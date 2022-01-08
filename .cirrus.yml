@@ -32,8 +32,8 @@ task:
       - curl -s https://api.telegram.org/bot$tokentl/sendMessage -d chat_id=$idtl -d text="...Sync Source..."
       - mkdir -p /tmp/rom
       - cd /tmp/rom
-      - repo init -q --no-repo-verify --depth=1 -u https://github.com/DirtyUnicorns/android_manifest.git -b p9x -g default,-device,-mips,-darwin,-notdefault
-      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+      - repo init --depth=1 -u https://github.com/DirtyUnicorns/android_manifest.git -b p9x
+      - repo sync --force-sync -j$( nproc --all )
       - curl -s https://api.telegram.org/bot$tokentl/sendMessage -d chat_id=$idtl -d text="Sync Completed!"
 
   Build_script:
