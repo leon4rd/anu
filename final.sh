@@ -2,7 +2,7 @@
 cd /tmp/rom
 
 #mkdir -p /tmp/rom/out
-#rclone copy rclonerw:los18/out.tar.gz /tmp/rom -P
+#rclone copy rclonerw:dup9/out.tar.gz /tmp/rom -P
 #time tar xf out.tar.gz
 #rm out.tar.gz
 #sleep 5s
@@ -14,6 +14,5 @@ ccache -o compression=true
 ccache -z
 
 source build/envsetup.sh
-breakfast onclite
-croot
-brunch onclite
+breakfast blueline
+mka bacon
