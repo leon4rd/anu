@@ -8,11 +8,11 @@ com ()
 }
 
 time com ccache 1
-rclone copy ccache.tar.gz rclonerw:aex -P
+rclone copy ccache.tar.gz rclonerw:los17 -P
 
 cd /tmp/rom
 mka installclean
-sleep 5s
+sleep 10s
 
 comi ()
 {
@@ -20,4 +20,4 @@ comi ()
 }
 
 time comi out 1
-rclone copy out.tar.gz rclonerw:aex -P
+rclone copy out.tar.gz rclonerw:los17 -P
