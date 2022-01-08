@@ -18,7 +18,7 @@ task:
        - mkdir -p ~/.config/rclone
        - echo "$rcloneconfig" > ~/.config/rclone/rclone.conf
        - mkdir -p /tmp/ccache
-       #- rclone copy rclonerw:los17/ccache.tar.gz /tmp -P
+       #- rclone copy rclonerw:los18/ccache.tar.gz /tmp -P
        #- cd /tmp
        #- time tar xf ccache.tar.gz
        - df -h
@@ -32,14 +32,12 @@ task:
       - curl -s https://api.telegram.org/bot$tokentl/sendMessage -d chat_id=$idtl -d text="...Sync Source..."
       - mkdir -p /tmp/rom
       - cd /tmp/rom
-      - repo init -q --no-repo-verify --depth=1 -u https://github.com/LineageOS/android.git -b lineage-17.1 -g default,-device,-mips,-darwin,-notdefault
-      - rm -f .repo/manifests/default.xml .repo/manifests/snippets/lineage.xml ; wget -q -P .repo/manifests https://raw.githubusercontent.com/leon4rd/android/lineage-17.1/default.xml ; wget -q -P .repo/manifests/snippets https://raw.githubusercontent.com/leon4rd/android/lineage-17.1/snippets/lineage.xml
-      - sleep 3s
+      - repo init -q --no-repo-verify --depth=1 -u https://github.com/LineageOS/android.git -b lineage-18.1 -g default,-device,-mips,-darwin,-notdefault
       - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
       # DT/VT/KT/TC
-      - git clone --depth=1 https://github.com/Dhina17/android_device_xiaomi_onclite --single-branch -b lineage-17.1 device/xiaomi/onclite
-      - git clone --depth=1 https://github.com/Dhina17/android_vendor_xiaomi_onclite --single-branch -b lineage-17.1 vendor/xiaomi/onclite
-      - git clone --depth=1 https://github.com/LineageOS/android_kernel_xiaomi_onclite --single-branch -b lineage-18.1 kernel/xiaomi/onclite
+      - git clone --depth=1 https://github.com/Dhina17/android_device_xiaomi_onclite --single-branch -b lineage-18.1 device/xiaomi/onclite
+      - git clone --depth=1 https://github.com/Dhina17/android_vendor_xiaomi_onclite --single-branch -b lineage-18.1 vendor/xiaomi/onclite
+      - git clone --depth=1 https://github.com/Dhina17/android_kernel_xiaomi_onclite --single-branch -b lineage-18.1 kernel/xiaomi/onclite
       - curl -s https://api.telegram.org/bot$tokentl/sendMessage -d chat_id=$idtl -d text="Sync Completed!"
 
   Build_script:

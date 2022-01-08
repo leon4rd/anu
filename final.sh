@@ -2,7 +2,7 @@
 cd /tmp/rom
 
 #mkdir -p /tmp/rom/out
-#rclone copy rclonerw:los17/out.tar.gz /tmp/rom -P
+#rclone copy rclonerw:los18/out.tar.gz /tmp/rom -P
 #time tar xf out.tar.gz
 #rm out.tar.gz
 #sleep 5s
@@ -14,6 +14,6 @@ ccache -o compression=true
 ccache -z
 
 source build/envsetup.sh
-lunch lineage_onclite-userdebug
 breakfast onclite
-brunch onclite -j$(nproc --all)
+croot
+brunch onclite
