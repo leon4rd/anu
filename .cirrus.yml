@@ -35,10 +35,10 @@ task:
       - repo init --depth=1 -u https://github.com/LineageOS/android.git -b lineage-18.1
       - repo sync --force-sync -j$(nproc --all)
       # DT/VT/KT/TC
-      - git clone --depth=1 https://github.com/Dhina17/android_device_xiaomi_onclite.git --single-branch -b lineage-18.1 device/xiaomi/onclite
+      - git clone --depth=1 https://github.com/LineageOS/android_device_xiaomi_onclite.git --single-branch -b lineage-18.1 device/xiaomi/onclite
       - git clone --depth=1 https://github.com/Dhina17/android_device_xiaomi_onclite-kernel.git --single-branch -b lineage-18.1 device/xiaomi/onclite-kernel
       - git clone --depth=1 https://github.com/Dhina17/android_vendor_xiaomi_onclite.git --single-branch -b lineage-18.1 vendor/xiaomi/onclite
-      - git clone --depth=1 https://github.com/Dhina17/android_kernel_xiaomi_onclite.git --single-branch -b lineage-18.1 kernel/xiaomi/onclite
+      - git clone --depth=1 https://github.com/LineageOS/android_kernel_xiaomi_onclite.git --single-branch -b lineage-18.1 kernel/xiaomi/onclite
       - curl -s https://api.telegram.org/bot$tokentl/sendMessage -d chat_id=$idtl -d text="Sync Completed!"
 
   Build_script:
