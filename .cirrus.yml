@@ -18,13 +18,13 @@ task:
        - mkdir -p ~/.config/rclone
        - echo "$rcloneconfig" > ~/.config/rclone/rclone.conf
        - mkdir -p /tmp/ccache
-       #- rclone copy rclonerw:los18/ccache.tar.gz /tmp -P
-       #- cd /tmp
-       #- time tar xf ccache.tar.gz
+       - rclone copy rclonerw:los18/ccache.tar.gz /tmp -P
+       - cd /tmp
+       - time tar xf ccache.tar.gz
        - df -h
        - lsblk
        - ls -l -a -h
-       #- rm ccache.tar.gz
+       - rm ccache.tar.gz
        - ls /tmp/ccache
        - curl -s https://api.telegram.org/bot$tokentl/sendMessage -d chat_id=$idtl -d text="Setup Build Successfully!"
 
