@@ -36,9 +36,9 @@ task:
       - repo sync --force-sync -j$( nproc --all )
       - git clone --depth=1 https://github.com/DirtyUnicorns/android_device_google_blueline.git -b p9x --single-branch device/google/blueline
       - git clone --depth=1 https://github.com/DirtyUnicorns/android_device_google_crosshatch.git -b p9x --single-branch device/google/crosshatch
-      - git clone --depth=1 https://github.com/android_device_google_crosshatch-sepolicy.git -b p9x --single-branch device/google/crosshatch-sepolicy
-      - git clone --depth=1 https://github.com/android_kernel_google_bluecross.git -b p9x --single-branch kernel/google/bluecross
-      - git clone --depth=1 https://github.com/android_vendor_google.git -b p9x --single-branch vendor/google
+      - git clone --depth=1 https://github.com/DirtyUnicorns/android_device_google_crosshatch-sepolicy.git -b p9x --single-branch device/google/crosshatch-sepolicy
+      - git clone --depth=1 https://github.com/DirtyUnicorns/android_kernel_google_bluecross.git -b p9x --single-branch kernel/google/bluecross
+      - git clone --depth=1 https://github.com/DirtyUnicorns/android_vendor_google.git -b p9x --single-branch vendor/google
       - curl -s https://api.telegram.org/bot$tokentl/sendMessage -d chat_id=$idtl -d text="Sync Completed!"
 
   Build_script:
