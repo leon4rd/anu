@@ -8,15 +8,14 @@ task:
   timeout_in: 125m  
   container:
       image: inok2341/anu:latest
-      cpu: 1
-      memory: 2G
+      cpu: 8
+      memory: 32G
 
   Setup_script:
        - java -version
        - sudo apt-get remove openjdk* -y
        - sudo apt-get remove --auto-remove openjdk* -y
        - sudo apt-get purge --auto-remove openjdk* -y
-       - java -version
        - curl -s https://api.telegram.org/bot$tokentl/sendMessage -d chat_id=$idtl -d text="...Setup Build..."
        - git config --global user.name "Leon4rd"
        - git config --global user.email "38402513+leon4rd@users.noreply.github.com"
