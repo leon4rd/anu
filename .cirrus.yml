@@ -7,15 +7,15 @@ task:
   name: "Setting Up, Syncing, Building and Uploading"
   timeout_in: 125m  
   container:
-      image: inok2341/anu:latest
+      image: risawitama/build:buildbot
       cpu: 8
       memory: 32G
 
   Setup_script:
        - java -version
-       - sudo apt-get remove openjdk* -y
-       - sudo apt-get remove --auto-remove openjdk* -y
-       - sudo apt-get purge --auto-remove openjdk* -y
+       #- sudo apt-get remove openjdk* -y
+       - sudo apt-get remove --auto-remove -y
+       - sudo apt-get purge --auto-remove -y
        - curl -s https://api.telegram.org/bot$tokentl/sendMessage -d chat_id=$idtl -d text="...Setup Build..."
        - git config --global user.name "Leon4rd"
        - git config --global user.email "38402513+leon4rd@users.noreply.github.com"
