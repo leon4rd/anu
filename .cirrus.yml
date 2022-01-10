@@ -19,8 +19,6 @@ task:
        - sudo apt-get install -y dnsutils
        - nslookup googlesource.com
        - nslookup android.googlesource.com
-       - sysctl -w net.ipv4.tcp_window_scaling=0
-       - sysctl -w net.ipv6.tcp_window_scaling=0
        - curl -s https://api.telegram.org/bot$tokentl/sendMessage -d chat_id=$idtl -d text="...Setup Build..."
        - git config --global user.name "Leon4rd"
        - git config --global user.email "38402513+leon4rd@users.noreply.github.com"
