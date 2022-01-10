@@ -13,11 +13,10 @@ task:
 
   Setup_script:
        - ls -lia /etc
+       - cat /etc/issue
        - cat /etc/hosts
-       - java -version
-       - python --version
-       - python2 --version
-       - python3 --version
+       - sudo apt-cache search nslookup
+       - sudo apt-get install -y dnsutils
        - nslookup googlesource.com
        - nslookup android.googlesource.com
        - sysctl -w net.ipv4.tcp_window_scaling=0
