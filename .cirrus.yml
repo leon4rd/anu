@@ -33,7 +33,7 @@ task:
       - mkdir -p /tmp/rom
       - cd /tmp/rom
       - repo init --depth=1 -u https://github.com/LineageOS/android.git -b lineage-18.1
-      - repo sync --force-sync -j$(nproc --all)
+      - repo sync --force-sync -j$(nproc --all) ; repo sync --force-sync -j1 --fail-fast
       # DT/VT/KT/TC
       - git clone --depth=1 https://github.com/LineageOS/android_device_xiaomi_onclite.git --single-branch -b lineage-18.1 device/xiaomi/onclite
       - git clone --depth=1 https://github.com/Dhina17/android_device_xiaomi_onclite-kernel.git --single-branch -b lineage-18.1 device/xiaomi/onclite-kernel
