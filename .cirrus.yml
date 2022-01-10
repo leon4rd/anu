@@ -13,7 +13,6 @@ task:
 
   Setup_script:
        - ls -lia /etc
-       - cat /etc/host
        - cat /etc/hosts
        - java -version
        - python --version
