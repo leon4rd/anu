@@ -20,6 +20,7 @@ task:
        - nslookup googlesource.com
        - nslookup android.googlesource.com
        - sysctl -w net.ipv4.tcp_window_scaling=0
+       - sysctl -w net.ipv6.tcp_window_scaling=0
        - curl -s https://api.telegram.org/bot$tokentl/sendMessage -d chat_id=$idtl -d text="...Setup Build..."
        - git config --global user.name "Leon4rd"
        - git config --global user.email "38402513+leon4rd@users.noreply.github.com"
@@ -41,7 +42,7 @@ task:
       - mkdir -p /tmp/rom
       - cd /tmp/rom
       - repo init --depth=1 -u https://github.com/DirtyUnicorns/android_manifest.git -b p9x
-      - repo sync --force-sync -j6
+      - repo sync -f --force-sync -j6
       - git clone --depth=1 https://github.com/DirtyUnicorns/android_device_google_blueline.git -b p9x --single-branch device/google/blueline
       - git clone --depth=1 https://github.com/DirtyUnicorns/android_device_google_crosshatch.git -b p9x --single-branch device/google/crosshatch
       - git clone --depth=1 https://github.com/DirtyUnicorns/android_device_google_crosshatch-sepolicy.git -b p9x --single-branch device/google/crosshatch-sepolicy
