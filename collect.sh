@@ -14,6 +14,6 @@ ccache -M 20G
 ccache -o compression=true
 ccache -z
 brunch onclite userdebug &
-sleep 50m
+sleep 80m
 kill %1
 ccache -s
